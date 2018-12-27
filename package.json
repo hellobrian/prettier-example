@@ -1,0 +1,30 @@
+{
+  "name": "prettier-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --write src/**/*.{js,css}"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{js,css}": [
+        "prettier --write",
+        "git add"
+      ]
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^1.2.1",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3"
+  }
+}
